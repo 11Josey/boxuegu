@@ -9,7 +9,7 @@ require.config({
         jquery:'lib/jquery/jquery-3.2.0',
         template:'lib/template/template-web',
         cookie:'lib/jquery/jquery.cookie',
-        common1:'js/common',
+        common:'js/common',
         login:'js/login'
     }
 });

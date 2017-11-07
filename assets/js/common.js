@@ -17,7 +17,7 @@ define(['jquery','template','cookie'],function ($,template) {
 
 // alert( userInfo );
     var userInfoObj = JSON.parse( userInfo || '{}' );
-    var html = template('temp',userInfoObj);
+    var html = template('user',userInfoObj);
     $('.aside .profile').html(html);
 
 
