@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="send">发送</button>
+<script>
+    var sendBtn=document.querySelector('#send');
+    sendBtn.onclick=function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get','/api/login?tc_name=前端学院&tc_pass=123456');
+        xhr.send(null);
+        /*xhr.open('post','/api/login');
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');*/
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4&&xhr.status==200) {
+                console.log(xhr.responseText);
+            }
+        }
+    };
+
+</script>
+
+</body>
+</html>

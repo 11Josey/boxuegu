@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="read">读取cookie</button>
+<button id="set">设置cookie</button>
+<script>
+   var read = document.querySelector('#read');
+   var set = document.querySelector('#set');
+    read.onclick = function () {
+        console.log(document.cookie);
+    };
+    set.onclick = function () {
+        document.cookie='key1=value1; max-age=1000; secure=true';
+        var xhr = new XMLHttpRequest();
+        xhr.open('get','http://www.baidu.com',true);
+        xhr.send(null);
+    };
+
+</script>
+
+</body>
+</html>

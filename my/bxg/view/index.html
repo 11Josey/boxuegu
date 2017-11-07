@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--类型一定是stylesheet/less-->
+    <link rel="stylesheet" href="./assets/lib/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet/less" href="./assets/less/index.less">
+    <link rel="stylesheet" href="./assets/lib/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body>
+<!--左侧边栏-->
+<div class="aside">
+    <div class="profile">
+        <div class="figure img-circle">
+            <img src="upload/monkey.png" alt="">
+        </div>
+        <h4>布头儿</h4>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="javascript:;"><span class="fa fa-home"></span>仪表盘</a></li>
+            <li><a href="javascript:;"><span class="fa fa-bell"></span>用户管理</a></li>
+            <li><a href="javascript:;"><span class="fa fa-bell"></span>讲师管理</a></li>
+            <li><a href="javascript:;"><span class="fa fa-cog"></span>课程管理 <i class="arrow fa fa-angle-right"></i></a>
+                <ul class="hide">
+                    <li><a href="javascript:;">课程添加</a></li>
+                    <li><a href="javascript:;">课程列表</a></li>
+                    <li><a href="javascript:;">课程分类</a></li>
+                    <li><a href="javascript:;">课程专题</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:;"><span class="fa fa-bell"></span>广告管理</a></li>
+            <li><a href="javascript:;"><span class="fa fa-cog"></span>系统设置 <i class="arrow fa fa-angle-right "></i></a>
+                <ul class="hide">
+                    <li><a href="javascript:;">网站设置</a></li>
+                    <li><a href="javascript:;">权限管理</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--右边主体内容-->
+<div class="main">
+    <div class="container-fluid">
+        <div class="header">
+            <!--顶部导航条-->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="javascript:;">
+                            <span class="fa fa-navicon"></span>
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#" class="bell"><span class="fa fa-bell"></span><span class="badge">8</span></a></li>
+                            <li><a href="#"><span class="fa fa-user">个人中心</span></a></li>
+                            <li><a href="#"><span class="fa fa-sign-out">退出</span></a></li>
+                            <li><a href="#"><span class="fa fa-tasks"></span></a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        <div class="body">
+            <!--路径导航-->
+            <ol class="breadcrumb">
+                <!--路径导航-->
+                <li><a href="#">讲师管理</a></li>
+                <li class="active">讲师列表</li>
+            </ol>
+            <!--面板,就是给盒子提供一个容器-->
+            <div class="panel panel-default add-teacher-btn">
+                <div class="panel-body">
+                    <button type="button" class="btn btn-success btn-sm pull-right">添加讲师</button>
+                </div>
+            </div>
+            <!--面板-->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form action="" class="form-inline"> <!--添加form-inline类可以变成行内元素,就不会占据一行了-->
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" >
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="button">搜索</button>
+                    </span>
+                        </div><!-- /input-group -->
+                    </form>
+
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>姓名</th>
+                            <th>昵称</th>
+                            <th>年龄</th>
+                            <th>性别</th>
+                            <th>手机号码</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>赵玉川</td>
+                            <td>布头儿</td>
+                            <td>28</td>
+                            <td>男</td>
+                            <td>15901256171</td>
+                            <td><a class="btn btn-info btn-xs" href="javascript:;">查看</a>
+                                <a class="btn btn-info btn-xs" href="javascript:;">编辑</a>
+                                <a class="btn btn-warning btn-xs" href="javascript:;" >注销</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>赵玉川</td>
+                            <td>布头儿</td>
+                            <td>28</td>
+                            <td>男</td>
+                            <td>15901256171</td>
+                            <td><a class="btn btn-info btn-xs" href="javascript:;">查看</a>
+                                <a class="btn btn-info btn-xs" href="javascript:;">编辑</a>
+                                <a class="btn btn-warning btn-xs" href="javascript:;" >注销</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+<script src="./assets/lib/less/less.js"></script>
+</body>
+</html>

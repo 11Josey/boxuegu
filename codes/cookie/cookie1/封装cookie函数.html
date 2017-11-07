@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="set">设置</button>
+<button id="get">获取</button>
+<button id="delete">删除</button>
+<script>
+    function setCookie(key,value,expiresTime){
+        var res='';
+        if(options) {
+            for(var k in options) {
+                res+=k+'='+options[k]+'; ';
+            }
+        }
+        var date = new Date("December 31, 2020");
+
+        document.cookie=key+'='+value+'; '+res;
+    }
+    function getCookie(key) {
+       if(key===undefined) {
+           return document.cookie;
+       }
+        var res=document.cookie;
+        res=res.split('; ');//['key=value','key1=value1']
+        for(var i = 0;i<res.length;i++) {
+            var arr=res[i].split('=');
+            if(key==arr[0]) {
+                return arr[1];
+            }
+        }
+    }
+    function removeCookie(key) {
+        setCookie(key,0,{expires:-1});
+    }
+    var date = new Date('2018-10-10');
+    var time = date.toGMTString();//expires 值应该使用 GMT 格式的时间 --Wed, 10 Oct 2018 00:00:00 GMT
+    console.log(time);
+
+</script>
+
+</body>
+</html>

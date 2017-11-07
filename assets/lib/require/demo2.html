@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script src="require.js"></script>
+<script>
+    //路径问题
+    require(['jquery'],function($) {
+        $('<div></div>').css({
+            width:'400px',
+            height:'400px',
+            border:'1px solid red'
+        }).appendTo('body');
+    });
+</script>
+<script>
+  /*  function foo() {
+        console.log(this.c);
+    }
+    var obj={
+        c:2
+
+    };
+    foo.apply(obj);
+    function Person(name,age){
+        this.name = name;
+        this.age =age;
+    }
+    var p1 = new Person('Anna',14);
+    console.log(p1.name);//Anna
+    console.log(p1.age);//14*/
+    function foo(){
+        console.log(this.c);
+    }
+    obj={
+        c:2,
+        foo:foo
+    };
+    function func(fn) {
+        fn();
+    }
+    var c=100;
+    func(obj.foo);
+
+</script>
+
+</body>
+</html>

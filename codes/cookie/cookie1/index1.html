@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(document.cookie);
+    document.cookie='key=123';
+    document.cookie='value=sky; path=/';//网站根目录下(域名下的所有文件)的所有文件都可以访问到这个cookie
+</script>
+</body>
+</html>

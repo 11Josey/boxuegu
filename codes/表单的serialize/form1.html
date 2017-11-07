@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="formId">
+    用户名<input type="text" name="username">
+    密码<input type="text" name="password">
+    选择科目<select name="course" id="">
+        <option value="1">英语</option>
+        <option value="2">数学</option>
+        <option value="3">语文</option>
+    </select>
+    <input type="submit" value="提交">
+</form>
+<script src="jquery-3.2.0.min.js"></script>
+<script>
+    /*serialize()方法通过序列化表单值,创建标准的URL编码表示的文本字符串(中文会编码),它的操作对象是代表表单元素集合的的jquery对象*/
+    $('#formId').on('submit',function () {
+        var param = $(this).serialize();
+        alert(param);
+    });
+
+
+</script>
+
+</body>
+</html>
