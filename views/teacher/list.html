@@ -87,7 +87,7 @@
                         <tr>
                             <th>姓名:</th>
                             <td>{{tc_name}}</td>
-                            <th>职位:</th>
+                            <th>职位:</th>`   qa
                             <td colspan="3">讲师</td>
                             <td rowspan="4" width="128">
                                 <div class="avatar">
@@ -115,12 +115,13 @@
                         </tr>
                         <tr>
                             <th>籍贯:</th>
-                            <td colspan="6">{{tc_hometown}}</td>
+                            <!--hometown的数据是'湖北省|襄阳市|襄城区,但是我们不想要这种结构,可以使用过滤器进行格式化-->
+                            <td colspan="6">{{tc_hometown | space : '这是过滤器的第二个实参': '这是过滤器的第三个实参'}}</td>
                         </tr>
                         <tr>
                             <td colspan="7">
                                 <div class="introduce">
-                                 {{tc_introduce}}
+                                 {{@tc_introduce}}<!--可以解析html结构,不加@那么就当做单纯的字符串渲染到页面中-->
                                 </div>
                             </td>
                         </tr>
