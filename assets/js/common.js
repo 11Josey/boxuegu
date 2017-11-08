@@ -21,6 +21,23 @@ define(['jquery','template','cookie'],function ($,template) {
     $('.aside .profile').html(html);
 
 
+    //退出,调用后台的
+    $('#exit').on('click',function () {
+        $.ajax({
+            type:'post',
+            url:'/api/logout',
+            success:function(data) {
+                if(data.code==200) {
+                    //console.log(data);
+                    //location.pathname='/';
+                }
+
+            }
+
+        })
+    });
+
+
 
 });
 
