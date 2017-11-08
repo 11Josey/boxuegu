@@ -11,7 +11,13 @@ require.config({
         cookie:'lib/jquery/jquery.cookie',
         common:'js/common',
         login:'js/login',
-        teacherList:'js/teacher/list'
+        teacherList:'js/teacher/list',
+        bootstrap:'lib/bootstrap/js/bootstrap'
+    },
+    shim:{
+        bootstrap:{
+            deps:['jquery']
+        }
     }
 });
 require(['less','common']);
