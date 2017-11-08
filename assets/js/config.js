@@ -10,7 +10,8 @@ require.config({
         template:'lib/template/template-web',
         cookie:'lib/jquery/jquery.cookie',
         common:'js/common',
-        login:'js/login'
+        login:'js/login',
+        teacherList:'js/teacher/list'
     }
 });
 require(['less','common']);
