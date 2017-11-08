@@ -56,10 +56,12 @@
                             <td>{{$value.tc_birthday}}</td>
                             <td>{{$value.tc_gender}}</td>
                             <td>{{$value.tc_cellphone}}</td>
-                            <td data-tc-id={{$value.tc_id}}>
+                            <td data-tc-id={{$value.tc_id}} >
                                 <a href="javascript:;" class="showInfo btn btn-info btn-xs">查 看</a>
                                 <a href="javascript:;" class="edit btn btn-info btn-xs">编 辑</a>
-                                <a href="javascript:;" class="btn btn-warning btn-xs">注 销</a>
+                                <a href="javascript:;" class="status btn btn-warning btn-xs" data-tc-status={{$value.tc_status}}>
+                                    {{if !$value.tc_status}} 注 销 {{else}} 启 用{{/if}}
+                                </a>
                             </td>
                         </tr>
                         {{/if}}
@@ -109,19 +111,24 @@
                         </tr>
                         <tr>
                             <th>手机号码:</th>
-                            <td colspan="2">{{tc_cellphone}}</td>
+                            <td colspan="2">{{tc_cellphone||'暂无手机号'}}</td>
                             <th>邮箱:</th>
-                            <td colspan="2">{{tc_email}}</td>
+                            <td colspan="2">{{tc_email||'暂无邮箱'}}</td>
                         </tr>
                         <tr>
                             <th>籍贯:</th>
                             <!--hometown的数据是'湖北省|襄阳市|襄城区,但是我们不想要这种结构,可以使用过滤器进行格式化-->
-                            <td colspan="6">{{tc_hometown | space : '这是过滤器的第二个实参': '这是过滤器的第三个实参'}}</td>
+                            <!--<td colspan="6">{{tc_hometown | space : '这是过滤器的第二个实参': '这是过滤器的第三个实参'}}</td>-->
+                            <td colspan="6">{{tc_hometown | space }}</td>
                         </tr>
                         <tr>
                             <td colspan="7">
                                 <div class="introduce">
-                                 {{@tc_introduce}}<!--可以解析html结构,不加@那么就当做单纯的字符串渲染到页面中-->
+                                    {{if tc_introduce ==null }}
+                                        暂无个人描述
+                                    {{else }}
+                                        {{@tc_introduce}}    <!--可以解析html结构,不加@那么就当做单纯的字符串渲染到页面中-->
+                                    {{/if }}
                                 </div>
                             </td>
                         </tr>
