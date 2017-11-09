@@ -9,6 +9,7 @@ require.config({
         jquery:'lib/jquery/jquery-3.2.0',
         template:'lib/template/template-web',
         cookie:'lib/jquery/jquery.cookie',
+        jqueryForm:'lib/form-master/dist/jquery.form.min',
         common:'js/common',
         login:'js/login',
         teacherList:'js/teacher/list',
