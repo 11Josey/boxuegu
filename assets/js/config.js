@@ -12,7 +12,8 @@ require.config({
         common:'js/common',
         login:'js/login',
         teacherList:'js/teacher/list',
-        teaherAdd:'js/teacher/add',
+        teacherAdd:'js/teacher/add',
+        teacherEdit:'js/teacher/edit',
         bootstrap:'lib/bootstrap/js/bootstrap',
         NProgress:'lib/nprogress/nprogress'
     },
