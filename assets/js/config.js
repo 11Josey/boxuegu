@@ -12,7 +12,9 @@ require.config({
         common:'js/common',
         login:'js/login',
         teacherList:'js/teacher/list',
-        bootstrap:'lib/bootstrap/js/bootstrap'
+        teaherAdd:'js/teacher/add',
+        bootstrap:'lib/bootstrap/js/bootstrap',
+        NProgress:'lib/nprogress/nprogress'
     },
     shim:{
         bootstrap:{
