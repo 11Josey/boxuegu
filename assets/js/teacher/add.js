@@ -19,7 +19,7 @@ define(['jquery'],function($) {
 
             }
         });
-        return false;
+        return false;//阻止表单提交的默认行为(数据传到url里面发送过去),input的type=submit可以按回车键提交数据,提升用户体验
     });
 
 });

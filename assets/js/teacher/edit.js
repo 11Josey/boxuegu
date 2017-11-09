@@ -19,7 +19,7 @@ define(['jquery','template'],function($,template) {
             }
         }
     });
-    //
+    //这里是先发送数据再渲染除了表单,所以需要用哪个form的父元素来委派添加事件,不然会报错
     $('#teacherEdit').on('submit','#teacherEditForm',function(){
         var formData = $('#teacherEditForm').serialize();
        // console.log(formData);
@@ -28,7 +28,7 @@ define(['jquery','template'],function($,template) {
             type:'post',
             data:formData,
             success:function(info) {
-                //console.log(info);
+                console.log(info);
                 location.pathname='/teacher/list';
             }
         });
