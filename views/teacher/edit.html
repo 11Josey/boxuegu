@@ -6,21 +6,22 @@
     <?php include('./views/common/style.html'); ?>
 </head>
 <body>
-    <?php include('./views/common/aside.html'); ?>
-    <!-- 主体 -->
-    <div class="main">
-        <div class="container-fluid">
-            <!-- 头部 -->
-            <?php include('./views/common/header.html'); ?>
-            <div class="body teacher">
-                <!-- 面包屑 -->
-                <ol class="breadcrumb">
-                    <li><a href="javascript:;">讲师管理</a></li>
-                    <li class="active">讲师编辑</li>
-                </ol>
-                <div class="teacher-add" id="teacherEdit">
-                    <script type="text/html" id="teacherEditTemplate">
-                    <form id="teacherEditForm" action="" class="form-horizontal col-md-offset-2">
+<?php include('./views/common/aside.html'); ?>
+<!-- 主体 -->
+<div class="main">
+    <div class="container-fluid">
+        <!-- 头部 -->
+        <?php include('./views/common/header.html'); ?>
+        <div class="body teacher">
+            <!-- 面包屑 -->
+            <ol class="breadcrumb">
+                <li><a href="javascript:;">讲师管理</a></li>
+                <li class="active">讲师编辑</li>
+            </ol>
+            <div class="teacher-add" id="teacherEdit">
+                <script type="text/html" id="teacherEditTemplate">
+                <form id="teacherEditForm"  class="form-horizontal col-md-offset-2">
+
                         <input type="hidden" name="tc_id" value={{tc_id}}>
                         <div class="form-group">
                             <label for="" class="col-md-3 control-label">姓名</label>
@@ -28,23 +29,36 @@
                                 <input type="text"
                                        class="form-control input-sm" placeholder="讲师名称"
                                        name="tc_name"
-                                       value="{{tc_name}}">
+                                       value="{{tc_name}}"
+                                       data-description="teacherName"
+                                       data-describedby="teacher_name"
+                                       data-required
+                                />
                             </div>
+                            <div id="teacher_name"></div>
                         </div>
-                       <!-- <div class="form-group">
-                            <label for="" class="col-md-3 control-label">密码</label>
-                            <div class="col-md-4">
-                                <input type="password" class="form-control input-sm"
-                                       value={{tc_pass}}>
-                            </div>
-                        </div>-->
+                        <!-- <div class="form-group">
+                             <label for="" class="col-md-3 control-label">密码</label>
+                             <div class="col-md-4">
+                                 <input type="password" class="form-control input-sm"
+                                        value={{tc_pass}}>
+                             </div>
+                         </div>-->
                         <div class="form-group">
                             <label for="" class="col-md-3 control-label">入职时间</label>
                             <div class="col-md-4">
                                 <input type="text" class="form-control input-sm"
                                        name="tc_join_date"
-                                       value="{{tc_join_date}}">
+                                       value="{{tc_join_date}}"
+                                       data-provide="datepicker"
+                                       data-date-format="yyyy-mm-dd"
+                                       data-date-language="zh-CN"
+                                       data-description="teacherJoinDate"
+                                       data-describedby="teacher_join_date"
+                                       data-required
+                                />
                             </div>
+                            <div id="teacher_join_date"></div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-md-3 control-label">类型</label>
@@ -68,26 +82,29 @@
                                     <input
                                             name="tc_gender"
                                             value="{{tc_gender}}"
-                                            type="radio"  {{if tc_gender==1}}checked{{/if}} > 女
+                                            type="radio" {{if tc_gender==1}}checked{{/if}}> 女
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-7">
                                 <!--<a href="./advert_list.html" class="btn btn-success btn-sm pull-right"> 编 辑 </a>-->
-                                <input type="submit" class="btn btn-success btn-sm pull-right"  value="编辑"/>
+                                <input type="submit" class="btn btn-success btn-sm pull-right" value="编辑"/>
                             </div>
                         </div>
-                    </form>
-                    </script>
-                </div>
+
+                </form>
+                </script>
+
+
             </div>
         </div>
     </div>
+</div>
 
-    <?php include('/views/common/script.html'); ?>
-    <script>
-        require(['teacherEdit']);
-    </script>
+<?php include('/views/common/script.html'); ?>
+<script>
+    require(['teacherEdit']);
+</script>
 </body>
 </html>
