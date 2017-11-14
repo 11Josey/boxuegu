@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="Jcrop-WIP-2.x/css/Jcrop.css">
+    <style>
+
+    </style>
+
+</head>
+<body>
+<div class="pic">
+    <div class="bigPic">
+        <img id="srcPic" src="img/1.jpg" alt="">
+    </div>
+    <div class="preview">
+        <!--<img src="img/2.jpg" alt="">-->
+    </div>
+</div>
+<div>
+    <form action="">
+        <input type="hidden" name="cs_id" value="4">
+        <input type="hidden" id="x" name='x'>
+        <input type="hidden" id="y" name='y'>
+        <input type="hidden" id="w" name='w'>
+        <input type="hidden" id="h" name='h'>
+        <p><input id="submitBtn" type="submit" value="提交"></p>
+    </form>
+</div>
+<script src="Jcrop-WIP-2.x/js/jquery.min.js"></script>
+<script src="Jcrop-WIP-2.x/js/Jcrop.js"></script>
+<script>
+    $('#srcPic').Jcrop({
+        aspectRatio:1,//裁切的宽高比
+        onChange:showCoords,//改变坐标的时候连续触发
+        onSelect:showCoords,//选中结束后触发
+        minSize:[200,200] //允许裁切的最小尺寸
+    },function() {
+        var jcrop_api = this;
+        //设置预览裁切框内图片的容器,源码预览是在图片的下面,
+        // 是通过代码生成的一个div容器,这里改变了源码Jcrop.js,可以设置页面中任何div做为容器
+        jcrop_api.initComponent('Thumbnailer', {
+            width: 200,
+            height: 200,
+            target: '.preview' //容器的class类名是preview
+        });
+    });
+    function showCoords(obj) {
+        //obj是事件对象,也就是裁切对象
+        $("#x").val(obj.x);
+        $("#y").val(obj.y);
+        $("#w").val(obj.w);
+        $("#h").val(obj.h);
+    }
+    
+
+</script>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 
-define(['jquery','template','NProgress','cookie'],function ($,template,NProgress) {
+define(['jquery','template','NProgress','tools','cookie'],function ($,template,NProgress,tools) {
     var php_session_id = $.cookie( 'PHPSESSID' );
     if ( !php_session_id && location.pathname != '/login' ) {
         // 不存在跳转到 登录页面
@@ -20,8 +20,6 @@ define(['jquery','template','NProgress','cookie'],function ($,template,NProgress
     /**
      第二部分, 页面加载的时候, 从 cookie 取出 userInfo, 得到用户的头像与用户名
      */
-
-
     var userInfo = $.cookie( 'userInfo' );
 
 // alert( userInfo );
@@ -30,7 +28,7 @@ define(['jquery','template','NProgress','cookie'],function ($,template,NProgress
     $('.aside .profile').html(html);
 
 
-    //退出,调用后台的
+    //退出,调用后台的接口,后台清cookie
     $('#exit').on('click',function () {
         $.ajax({
             type:'post',
@@ -45,9 +43,11 @@ define(['jquery','template','NProgress','cookie'],function ($,template,NProgress
 
         })
     });
-
-
-
+    //功能就是点击左侧导航栏链接添加active的类
+    tools.setMenu();
+    $('.navs a+ul').prev().click(function() {
+        $(this).next().toggle();
+    });
 });
 
 

@@ -73,10 +73,8 @@ a:focus {
   margin: 4px 0;
   color: #a9b0c2;
 }
-.aside .navs a:hover,
-.aside .navs a:active,
-.aside .navs a:visited {
-  color: #F6F6F6;
+.aside .navs a.active {
+  color: #f6f6f6;
   background-color: #243443;
 }
 .aside .navs a + ul a {
